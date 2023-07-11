@@ -1,40 +1,68 @@
-# 'name' Frontend
+# LZW + RLE compression and decompression🎲
+>Tugas Seleksi IRK
+## Table of Contents
+* [Contributors](#contributors)
+* [General Information](#general-information)
+* [Local Setup](#local-setup)
+* [File Input Structure](#file-input-structure)
+## Contributors
+| NIM | Nama |
+| :---: | :---: |
+| 13521021 | Bernardus Willson  |
+## General Information 
+LZW compression is a lossless data compression algorithm, meaning that no data is lost during the compression and decompression process. It works by creating a table of all the unique strings that appear in the input data. When a new string is encountered, it is looked up in the table. If the string is found in the table, its corresponding code is emitted. If the string is not found in the table, it is added to the table and a new code is emitted.
 
-## Tech Stack
+RLE stands for Run-Length Encoding. It is a lossless data compression algorithm that works by replacing runs of consecutive data values with a single value and a count. For example, if a sequence of data contains 100 consecutive zeros, then the RLE algorithm would store this as a single value of 0 and a count of 100.
 
-- [React](https://reactjs.org/)
-- [Next](https://nextjs.org/)
-- [Tailwind](https://tailwindcss.com/)
+This project is a web-based application that can compress and decompress text by combining LZW and RLE algorithms. Original text is compressed using the LZW algorithm and then it generates 8 bit binary numbers. The numbers are then compressed again using RLE.
+## Local Setup
+<br>
+1. Clone FE and BE repo using the command below: 
 
-## Setup and Installation
-
-1. Clone repo
 ```
-git clone 'link'
+git clone https://github.com/bernarduswillson/LZW-Frontend
 ```
-2. Install dependencies
+```
+git clone https://github.com/bernarduswillson/LZW-Backend
+```
+<br>
+2. Install dependencies :
+
 ```
 yarn
 ```
-3. Start the app
+<br>
+3. Run localhost server :
+<br>
+for FE:
+
 ```
 yarn dev
 ```
+for BE:
 
-## Branching and Commit Messages
+```
+npm run app
+```
+Alternatively, you can open the website by using this link
+```
+https://lzw-frontend.vercel.app/
+```
 
-Setiap membuat branch baru harus ambil base dari `main`. Untuk penamaan commit dan branch mengikuti format berikut.
-Format branch: `<type>/<title>`
-Format commit: `<type>: <subject>`
-Penamaan menggunakan kebab case
+![](doc/home.png)
+![](doc/home2.png)
 
-Untuk type mengikuti semantic berikut.
-- `feat`: (new feature for the user, not a new feature for build script)
-- `fix`: (bug fix for the user, not a fix to a build script)
-- `docs`: (changes to the documentation)
-- `style`: (formatting, missing semi colons, etc; no production code change)
-- `refactor`: (refactoring production code, eg. renaming a variable)
-- `test`: (adding missing tests, refactoring tests; no production code change)
-- `chore`: (updating grunt tasks etc; no production code change)
+<br>
+4. Type the text you want to compress or decompress in the text area and click the compress button. The compressed or decompressed text will be shown in the text area below.
 
-## Link
+![](doc/input.png)
+
+<br>
+5. You can also save the compressed or decompressed text to a file by clicking the save button. The history of the compressed or decompressed text will be shown in the history section on the bottom of the page.
+
+![](doc/history.png)
+
+<br>
+6. If you want to delete the history, you can click the delete button 'X' or delete all history by clicking the 'clear' button.
+
+![](doc/delete.png)
