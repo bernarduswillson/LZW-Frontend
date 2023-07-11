@@ -33,7 +33,7 @@ const Landing: React.FC = () => {
 
   const compressText = async (text: string): Promise<void> => {
     try {
-      const response = await fetch('http://localhost:8082/compress', {
+      const response = await fetch('https://lzw-backend-production.up.railway.app/compress', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ const Landing: React.FC = () => {
 
   const decompressText = async (text: string): Promise<void> => {
     try {
-      const response = await fetch('http://localhost:8082/decompress', {
+      const response = await fetch('https://lzw-backend-production.up.railway.app/decompress', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
